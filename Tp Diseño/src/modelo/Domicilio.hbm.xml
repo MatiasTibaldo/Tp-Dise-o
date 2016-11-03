@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 30/09/2016 14:45:49 by Hibernate Tools 5.1.0.Alpha1 -->
+<hibernate-mapping>
+    <class name="modelo.Domicilio" table="domicilio" schema="public" optimistic-lock="version">
+        <id name="dni" type="int">
+            <column name="dni" />
+            <generator class="foreign">
+                <param name="property">persona</param>
+            </generator>
+        </id>
+        <one-to-one name="persona" class="modelo.Persona" constrained="true"></one-to-one>
+        <property name="calle" type="string">
+            <column name="calle" length="50" />
+        </property>
+        <property name="altura" type="java.lang.Integer">
+            <column name="altura" />
+        </property>
+    </class>
+</hibernate-mapping>

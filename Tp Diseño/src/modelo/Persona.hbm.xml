@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 30/09/2016 14:45:49 by Hibernate Tools 5.1.0.Alpha1 -->
+<hibernate-mapping>
+    <class name="modelo.Persona" table="persona" schema="public" optimistic-lock="version">
+        <id name="dni" type="int">
+            <column name="Dni" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombre" type="java.lang.Character">
+            <column name="Nombre" length="1" />
+        </property>
+        <one-to-one name="domicilio" class="modelo.Domicilio"></one-to-one>
+    </class>
+</hibernate-mapping>
